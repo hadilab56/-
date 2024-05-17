@@ -1,0 +1,91 @@
+<app-user-nav-bar></app-user-nav-bar>
+<!-- Bootstrap Carousel for Photo Slides -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner banner-size">
+    <div class="carousel-item active">
+      <img src="assets/image/staff2.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Welcome To Societe Tuba Staff </h1>
+        <p>Nos dernieres projets : La résidence ‟Zéphyr 1“ <a href="https://immobiliere-sivia.com/projets-en-cours/residence-zephyr-i/ ">SIVIA</a></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/image/staff3.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Second Slide Label</h1>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/image/staff.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Third Slide Label</h1>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- First Part: Le saviez-vous? -->
+<style>
+  .section-separator {
+    border: none;
+    height: 2px;
+    background-color: #333; /* Change the color as needed */
+    margin: 20px 0; /* Adjust the margin as needed */
+  }
+
+  .section-title {
+    font-size: 24px; /* Change the font size as needed */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+  .section-content {
+    text-align: center;
+    line-height: 2; /* Increase line height for better readability */
+    margin-bottom: 20px; /* Add some space at the bottom */
+    font-size: 25PX;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (adjust as needed) */
+    overflow: hidden;
+    margin-bottom: 20px; /* Add some space at the bottom */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="container mt-4">
+  <hr class="section-separator">
+  <p class="section-title">Le saviez-vous ?</p>
+  <p class="section-content">Le plâtre est réalisé à partir du Gypse. Le gypse est présent dans nos sols aux 4 coins du globe.
+    Il présente des qualités rocheuses et minérales différentes en fonction de l’endroit d’où il est extrait.
+    Le gypse que nous utilisons au service de votre construction et de votre décoration est issu des carrières de Paris.
+     Elles sont mondialement réputées pour la pureté de leur roche qui n’ont pas subi
+      d’altération géologique liée à la tectonique des plaques. Le gypse de ces carrières date de 35 millions
+       d’années et ses couches sédimentaires se sont formées très lentement.</p>
+
+</div>

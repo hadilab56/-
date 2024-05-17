@@ -1,0 +1,45 @@
+<app-user-nav-bar></app-user-nav-bar>
+
+<div class="container">
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th> 
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>
+                        <img src="{{ product.image }}" alt="Product Image" class="product-image" >
+                    </td>
+                    <td>
+                        <input type="number" class="quantity-input" [(ngModel)]="product.quantity" value="1">
+                    </td>
+                    <td>
+                        <button  (click)="removeFromCart(i)" [disabled]="isConfirmButtonDisabled()">
+                            <i class="fa fa-trash"></i> 
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-primary" (click)="confirmPurchase()" [disabled]="isConfirmButtonDisabled()">
+            Confirm
+        </button>
+    </div>
+</div>

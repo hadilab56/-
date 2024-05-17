@@ -1,0 +1,36 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+
+<div class="container">
+    <h2>Products List</h2>
+    <table class="table table-striped table-container " >
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Categorie</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td class="ttdd">{{ product.id }}</td>
+                <td class="ttdd">{{ product.title }}</td>
+                <td class="ttdd">{{ product.categorie }}</td>
+                <td class="ttdd">{{ product.description }}</td>
+                <td class="ttdd">{{ product.price }}</td>
+                <td>
+                    <img src="{{ product.image }}" alt="Product Image" style="max-width: 100px; max-height: 100px;">
+                </td>
+                <td class="ttdd">
+                    <i class="fa fa-trash" (click)="deleteProduct(product.id)">  </i>
+            &nbsp;
+        <a routerLink="/edit/{{ product.id}}"><i class="fa fa-edit" ></i>
+        </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

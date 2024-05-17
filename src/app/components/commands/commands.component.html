@@ -1,0 +1,42 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+
+<div class="container">
+  <h2 >Commands</h2>
+
+  <div *ngIf="cartHistory.length === 0">
+    <p>No commands available.</p>
+  </div>
+
+  <div *ngFor="let cartItem of cartHistory; let i = index">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Command {{ i + 1 }}</h5>
+        <p>User Email: {{ cartItem.userEmail }}</p>
+        <p>Date: {{ cartItem.date | date:'medium' }}
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of cartItem.product">
+                <td>{{ product.title }}</td>
+                <td class="price">{{ product.price}}D</td>
+                <td>{{ product.quantity }}</td>
+                <td class="price">{{ calculateTotal(product)}}D</td>
+              </tr>
+              <tr>
+                <th>Total Amount</th>
+                <td class="price">{{ calculateCartTotal(cartItem)}}D</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>

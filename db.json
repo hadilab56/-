@@ -1,0 +1,99 @@
+{
+  "products": [
+    {
+      "categorie": "Plafond",
+      "title": "Moulure lisse ",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101_-1108-800x545.jpg",
+      "description": "prix en ML :",
+      "price": "15",
+      "id": "4e99"
+    },
+    {
+      "id": "aba2",
+      "categorie": "Plafond",
+      "title": "Angle pour moulure ",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101D-336x495.jpg",
+      "description": "prix en ML ",
+      "price": "20"
+    },   
+    {
+      "categorie": "Murs",
+      "title": "Tête de pilastre",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0801-chapiteau-1.jpg",
+      "description": "Prix en M²",
+      "price": "7.8",
+      "id": "f7ef"
+    },
+    {
+      "id": "308e",
+      "categorie": "Murs",
+      "title": "Socle de pilastre",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0805-1.jpg",
+      "description": "prix en M²",
+      "price": "25"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "adress": "isetRades",
+      "phone": 58138146,
+      "password": "adminpass",
+      "role": "admin"
+    },
+    {
+      "id": "ba15",
+      "name": "hahaha",
+      "email": "haha@gmail.com",
+      "adress": "",
+      "phone": 12345678,
+      "password": "12345",
+      "role": "user"
+    }
+  ],
+  "carts": [
+    {
+      "id": "cfd1",
+      "product": [
+        {
+          "categorie": "Murs",
+          "title": "45234234",
+          "image": "43424",
+          "description": "4343",
+          "price": "1231",
+          "id": "7a61",
+          "quantity": 5
+        }
+      ],
+      "userEmail": "haha@gmail.com",
+      "date": "2024-05-15T00:11:41.541Z"
+    },
+    {
+      "id": "fbd9",
+      "product": [
+        {
+          "id": "aba2",
+          "categorie": "Plafond",
+          "title": "Angle pour moulure ",
+          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101D-336x495.jpg",
+          "description": "prix en ML ",
+          "price": "20",
+          "quantity": 10
+        },
+        {
+          "categorie": "Plafond",
+          "title": "Moulure lisse ",
+          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101_-1108-800x545.jpg",
+          "description": "prix en ML :",
+          "price": "15",
+          "id": "4e99",
+          "quantity": 25
+        }
+      ],
+      "userEmail": "haha@gmail.com",
+      "date": "2024-05-15T08:37:38.716Z"
+    }
+  ]
+}

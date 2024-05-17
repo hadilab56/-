@@ -1,0 +1,73 @@
+<app-user-nav-bar></app-user-nav-bar>
+
+<!-- Second Part: Products -->
+<div class="container">
+  <p class="centered bold">Plafond</p>
+  <div class="row">
+    <div *ngFor="let product of plafondProducts" class="col-md-3 mb-4">
+      <div class="card">
+        <img class="card-img-top" [src]="product.image" [alt]="product.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text desc">{{ product.description }}</p>
+          <div class="price">
+            <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>
+            <p class="card-text text-success"><b>{{ product.price }} D</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-separator">
+
+<!-- Third Part: Murs -->
+<div class="container">
+  <p class="centered bold">Murs</p>
+  <div class="row">
+    <div *ngFor="let product of mursProducts" class="col-md-4 mb-4">
+      <div class="card">
+        <img class="card-img-top" [src]="product.image" [alt]="product.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text desc">{{ product.description }}</p>
+          <div class="price">
+            <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>
+            <p class="card-text text-success"><b>{{ product.price }} D</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-separator">
+
+<!-- Fourth Part: Eclairage -->
+<div class="container">
+  <p class="centered bold">Eclairage</p>
+  <div class="row">
+    <div *ngFor="let product of eclairageProducts" class="col-md-4 mb-4">
+      <div class="card">
+        <img class="card-img-top" [src]="product.image" [alt]="product.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text desc">{{ product.description }}</p>
+          <div class="price">
+            <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>
+            <p class="card-text text-success"><b>{{ product.price }} D</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-separator">
+
+<!-- Fifth Part: About Us -->
+<div class="container">
+  <p class="centered bold">About Us</p>
+  <p>This is the section where you can provide information about your company or organization.</p>
+</div>

@@ -1,0 +1,22 @@
+/* user-navbar.component.css */
+
+.banner {
+  width: 100vw; /* 100% of the viewport width */
+  height: 300px; /* Adjust height as needed */
+  background-color: #f0f0f0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.banner img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}

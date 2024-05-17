@@ -1,0 +1,126 @@
+.card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.09);
+}
+
+.card-img-top {
+  transition: transform 1.2s;
+  padding: 3px;
+}
+
+.card-body {
+  overflow: hidden;
+  height: 190px;
+}
+
+.price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+.col-md-3 {
+  padding: 0 15px;
+}
+
+.desc {
+  overflow-y: auto;
+  max-height: 80px;
+  margin-bottom: 10px;
+}
+
+.btn-primary{
+  background-color: var(--main-color);
+}
+.centered {
+  text-align: center;
+  font-size: larger;
+}
+
+.bold {
+  font-weight: bold;
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 25PX;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight:bold;
+}
+
+.carousel-item img {
+  height: 500px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+.card {
+  width: 100%;
+  height: 400px; /* Set a fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-img-top {
+  max-height: 200px; /* Adjust as necessary */
+  object-fit: contain;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.text-success {
+  font-weight: bold;
+  color: green;
+}

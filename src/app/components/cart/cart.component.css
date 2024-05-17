@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  app-user-nav-bar {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  .table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .product-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+  }
+  
+  .quantity-input {
+    width: 70px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  .fa {
+    cursor: pointer;
+    font-size: 18px;
+    color: #dc3545; 
+  }
+  .btn-primary{
+    background-color: var(--main-color);
+  }
+  
