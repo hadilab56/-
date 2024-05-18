@@ -20,6 +20,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { CommandsComponent } from './components/commands/commands.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OurUniversComponent } from './components/our-univers/our-univers.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { OurUniversComponent } from './components/our-univers/our-univers.compon
     HistoryComponent,
     CommandsComponent,
     FooterComponent,
-    OurUniversComponent
+    OurUniversComponent,
+    ProjectsComponent
     ],
   imports: [
     BrowserModule,
