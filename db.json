@@ -15,22 +15,38 @@
       "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101D-336x495.jpg",
       "description": "prix en ML ",
       "price": "20"
-    },   
+    },
     {
       "categorie": "Murs",
       "title": "Tête de pilastre",
       "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0801-chapiteau-1.jpg",
-      "description": "Prix en M²",
+      "description": "Tête de pilastre pour pilastre 0800 Dimensions Hauteur 8 x Largeur 22,5 x Epaisseur 4,5 cm",
       "price": "7.8",
       "id": "f7ef"
     },
     {
-      "id": "308e",
       "categorie": "Murs",
       "title": "Socle de pilastre",
       "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0805-1.jpg",
-      "description": "prix en M²",
-      "price": "25"
+      "description": "Socle pilastre pour pilastre 0780 Hauteur 17 x Longueur 12 x Epaisseur 3 cm",
+      "price": "25",
+      "id": "308e"
+    },
+    {
+      "categorie": "Plafond",
+      "title": "Doucine",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/DOUCINE-1101F-STAFFDECOR-1024x465.jpg",
+      "description": "Dimensions Doucine de moulure avec coquille 1101F. 69 cm",
+      "price": "12",
+      "id": "f1ab"
+    },
+    {
+      "id": "859f",
+      "categorie": "Murs",
+      "title": "Pilastre cannelé",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0760-1-75x495.jpg",
+      "description": "Dimensions Pilastre cannelé Dimensions largeur 7 x Hauteur 250 x Epaisseur 1,5 cm",
+      "price": "30"
     }
   ],
   "users": [

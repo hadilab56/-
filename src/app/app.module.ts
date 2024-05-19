@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarouselComponent } from "./components/carousel/carousel.component";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     CommandsComponent,
     FooterComponent,
     OurUniversComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    CarouselComponent,
     ],
   imports: [
     BrowserModule,

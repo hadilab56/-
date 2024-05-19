@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from "@angular/core";
+
 
 @Component({
   selector: 'app-projects',
@@ -6,7 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
- constructor(){
-  
- }
 }
