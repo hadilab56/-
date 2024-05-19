@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-our-univers',
   templateUrl: './our-univers.component.html',
   styleUrls: ['./our-univers.component.css']
 })
-export class OurUniversComponent {
-  constructor(public router: Router) {}
+export class OurUniversComponent implements OnInit{
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }
