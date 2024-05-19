@@ -22,6 +22,7 @@ import { CommandsComponent } from './components/commands/commands.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OurUniversComponent } from './components/our-univers/our-univers.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ClientComponent } from './components/client/client.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     OurUniversComponent,
     ProjectsComponent,
     CarouselComponent,
+    ClientComponent
     ],
   imports: [
     BrowserModule,

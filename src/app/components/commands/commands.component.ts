@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/interfaces/cart';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -7,15 +7,15 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './commands.component.html',
   styleUrls: ['./commands.component.css']
 })
-export class CommandsComponent {
-  constructor(private cart: CartService) { }
-
+export class CommandsComponent implements OnInit {
   cartHistory: Array<Cart> = [];
 
+  constructor(private cart: CartService) { }
+
   ngOnInit(): void {
-  this.cart.getCart().subscribe((res : any)=>{
-    this.cartHistory = res ;
-  })    
+    this.cart.getCart().subscribe((res: any) => {
+      this.cartHistory = res;
+    });
   }
 
   calculateTotal(product: any): number {
@@ -26,8 +26,11 @@ export class CommandsComponent {
     if (cartItem.product && cartItem.product.length > 0) {
       return cartItem.product.reduce((total, product) => total + this.calculateTotal(product), 0);
     } else {
-      return 0; 
+      return 0;
     }
   }
-  
+
+  printCommands(): void {
+    window.print();
+  }
 }
