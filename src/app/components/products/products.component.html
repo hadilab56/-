@@ -10,7 +10,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
           <p class="card-text desc">{{ product.description }}</p>
-          <b>{{ product.description }}</b>
+          <br>
           <div class="price">
             <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>
             <p class="card-text text-success"><b>{{ product.price }} D</b></p>
@@ -33,6 +33,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
           <p class="card-text desc">{{ product.description }}</p>
+          <br>
           <div class="price">
             <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>
             <p class="card-text text-success"><b>{{ product.price }} D</b></p>
