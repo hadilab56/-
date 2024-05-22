@@ -1,13 +1,105 @@
 <app-user-nav-bar></app-user-nav-bar>
-<img src="assets/image/staff4.jpg" alt="Banner Image" class="decor-image">
-<div class="container mt-4">
-  <p class="section-title">Le style Staff Décor</p>
-  <p class="section-content">Laissons place nette au staff ! Capter une lumière,
-    capturer des ombres. Former, déformer, reformer pour reconstruire l’environnement architectural de l’espace.
-    Matériau noble et naturel, le staff est le caméléon de la décoration d’intérieur.
-    Qu’on le veuille design ou qu’on le préfère baroque, il opère dans chaque lieu de la même manière.
-    Discrètement il s’impose comme moteur de l’harmonie globale.
-  </p>
-</div>
-<hr class="section-separator">
 
+<section>
+  <div class="container-fluid h-custom">
+    <div
+      class="row d-flex justify-content-center align-items-center"
+      style="height: 100vh"
+    >
+      <div class="col-md-9 col-lg-6 col-xl-5 image-container">
+        <div class="circular-sliding-image">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid"
+            alt="Sample image"
+          />
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h2>GET IN TOUCH</h2>
+        <form
+          [formGroup]="ContactForm"
+          (ngSubmit)="onSubmit()"
+          enctype="multipart/form-data"
+        >
+          <!-- Name input -->
+          <div class="form-outline mb-2">
+            <!-- <label class="form-label" for="name">Name</label> -->
+            <input
+              type="text"
+              formControlName="name"
+              id="name"
+              class="form-control form-control-lg"
+              placeholder="Your Name"
+              required
+              style="border-radius: 40px"
+            />
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-2">
+            <!-- <label class="form-label" for="email">Email </label> -->
+            <input
+              type="email"
+              formControlName="email"
+              id="email"
+              class="form-control form-control-lg"
+              placeholder="Your Email"
+              required
+              style="border-radius: 40px"
+            />
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <!-- <label for="msg">Message</label> -->
+            <textarea
+              formControlName="msg"
+              id="msg"
+              class="form-control p-4"
+              rows="3"
+              placeholder="Your Message"
+              required
+              style="border-radius: 40px"
+            ></textarea>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button
+              type="submit"
+              [disabled]="ContactForm.invalid"
+              class="btn btn-success btn-lg w-100"
+              style="
+                padding-left: 2.5rem;
+                padding-right: 2.5rem;
+                border-radius: 40px;
+              "
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<swal
+  #succesSwal
+  title="Success"
+  [text]="submitMessage"
+  icon="success"
+  [confirmButtonColor]="'lime'"
+  [confirmButtonText]="'OK'"
+>
+</swal>
+
+<swal
+  #failSwal
+  title="Failure !"
+  icon="error"
+  [text]="submitMessage"
+  [confirmButtonColor]="'red'"
+  [confirmButtonText]="'OK'"
+>
+</swal>

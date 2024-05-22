@@ -9,7 +9,8 @@
         <img class="card-img-top" [src]="product.image" [alt]="product.title">
         <div class="card-body">
           <h5 class="card-title">{{ product.title }}</h5>
-          <p class="card-text desc">{{ product.description }}</p>
+          <p class="card-text desc">{{ product.description }}
+
           <br>
           <div class="price">
             <button class="btn btn-primary" (click)="addToCart(product)" [disabled]="isInCart(product)">Cart</button>

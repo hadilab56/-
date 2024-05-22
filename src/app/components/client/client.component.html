@@ -1,1 +1,267 @@
 <app-admin-nav-bar></app-admin-nav-bar>
+
+<div class="container">
+  <h2>Users</h2>
+
+  <div *ngIf="users.length === 0">
+    <p>No users available.</p>
+  </div>
+
+  <div *ngFor="let user of users; let i = index">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">User {{ i + 1 }}</h5>
+
+        <table class="table mt-2">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>E-mail</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Password</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.address }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.password }}</td>
+              <td>
+                <button
+                  type="button"
+                  (click)="editUser(user)"
+                  class="btn btn-sm btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editMoadl"
+                >
+                  Edit
+                </button>
+
+                <button
+                  type="button"
+                  [swal]="deleteSwal"
+                  (confirm)="deleteUser(user)"
+                  class="btn btn-sm btn-danger"
+                >
+                  Delete user
+                </button>
+              </td>
+              <swal
+                #deleteSwal
+                title="Delete {{ user.name }}?"
+                [confirmButtonColor]="'green'"
+                [confirmButtonText]="'Delete'"
+                [cancelButtonColor]="'red'"
+                [cancelButtonText]="'Cancel'"
+                [showCancelButton]="true"
+              ></swal>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <swal
+    #succesSwal
+    title="Success"
+    icon="success"
+    [confirmButtonColor]="'lime'"
+    [confirmButtonText]="'OK'"
+  >
+  </swal>
+
+  <swal
+    #failSwal
+    title="Failure !"
+    icon="error"
+    [confirmButtonColor]="'red'"
+    [confirmButtonText]="'OK'"
+  >
+  </swal>
+</div>
+
+<!-- Vertically centered scrollable modal -->
+<div
+  class="modal fade"
+  id="editMoadl"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="editMoadl"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+    tabindex="-1"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedUser.name }}</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          [formGroup]="userEditForm"
+          (ngSubmit)="submitDetails()"
+          class="rounded p-4 shadow"
+        >
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                userEditForm.get('name')?.invalid &&
+                (userEditForm.get('name')?.dirty ||
+                  userEditForm.get('name')?.touched)
+              "
+            >
+              <div *ngIf="userEditForm.get('name')?.errors?.['required']">
+                Full name is required
+              </div>
+              <div *ngIf="userEditForm.get('name')?.errors?.['minlength']">
+                Full name length is not valid
+              </div>
+              <div *ngIf="userEditForm.get('name')?.errors?.['pattern']">
+                First letter must be capitalized
+              </div>
+            </small>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                userEditForm.get('email')?.invalid &&
+                (userEditForm.get('email')?.dirty ||
+                  userEditForm.get('email')?.touched)
+              "
+            >
+              <div *ngIf="userEditForm.get('email')?.errors?.['required']">
+                Email is required
+              </div>
+              <div *ngIf="userEditForm.get('email')?.errors?.['email']">
+                Email is not valid
+              </div>
+            </small>
+          </div>
+
+          <!-- Address Field -->
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              formControlName="address"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                userEditForm.get('address')?.invalid &&
+                (userEditForm.get('address')?.dirty ||
+                  userEditForm.get('address')?.touched)
+              "
+            >
+              <div *ngIf="userEditForm.get('address')?.errors?.['required']">
+                Address is required
+              </div>
+              <div *ngIf="userEditForm.get('address')?.errors?.['minlength']">
+                Address length is not valid
+              </div>
+              <div *ngIf="userEditForm.get('address')?.errors?.['pattern']">
+                First letter must be capitalized
+              </div>
+            </small>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="number"
+              class="form-control"
+              id="phone"
+              formControlName="phone"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                userEditForm.get('phone')?.invalid &&
+                (userEditForm.get('phone')?.dirty ||
+                  userEditForm.get('phone')?.touched)
+              "
+            >
+              <div *ngIf="userEditForm.get('phone')?.errors?.['required']">
+                Phone number is required
+              </div>
+              <div *ngIf="userEditForm.get('phone')?.errors?.['minlength']">
+                Phone number is invalid
+              </div>
+            </small>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+            />
+            <small
+              class="text-danger"
+              *ngIf="
+                userEditForm.get('password')?.invalid &&
+                (userEditForm.get('password')?.dirty ||
+                  userEditForm.get('password')?.touched)
+              "
+            >
+              <div *ngIf="userEditForm.get('password')?.errors?.['required']">
+                Password is required
+              </div>
+              <div
+                *ngIf="userEditForm.get('password')?.errors?.['minlength'] || userEditForm.get('password')?.errors?.['password']"
+              >
+                Password is not valid
+              </div>
+            </small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="submitDetails()">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,7 +19,7 @@ export class ProductsComponent {
     this.productService.getAllProducts().subscribe(
       (res: Array<Product>) => {
           res.forEach((p)=>{
-            switch(p.categorie){
+            switch(p.category){
               case "Plafond":{
                 this.plafondProducts.push(p);
                 break;

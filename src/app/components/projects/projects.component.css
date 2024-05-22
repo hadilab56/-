@@ -1,4 +1,24 @@
 
+.decor-image {
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  object-fit: cover; /* This will make sure the image covers the entire area */
+  object-position: center; /* Center the image horizontally */
+  display: block;
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+/* Additional styling for a full-width banner container */
+.banner {
+  width: 100vw; /* Full viewport width */
+  overflow: hidden;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
 /* Styles for the section title */
 .section-title {
   font-size: 24px; /* Change the font size as needed */

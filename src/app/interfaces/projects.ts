@@ -3,5 +3,6 @@ export interface Project {
   name?: string;
   price?: number;
   image?: string;
+  
   inventoryStatus?: string;
 }

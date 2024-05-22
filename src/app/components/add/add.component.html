@@ -3,71 +3,142 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="mb-4 text-center ">Add Product</h2>
+      <h2 class="mb-4 text-center">Add Product</h2>
+      <form
+        [formGroup]="addProduct"
+        (ngSubmit)="addData()"
+        class="rounded p-4 shadow"
+      >
+        <div class="form-group">
+          <label>Categorie</label>
+          <select class="form-control" formControlName="categorie">
+            <option value="">Select a category</option>
+            <option *ngFor="let category of categories" [value]="category.id_c">
+              {{ category.NAME }}
+            </option>
+          </select>
+        </div>
 
+        <div class="form-group">
+          <label>Title</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter title"
+            formControlName="title"
+          />
+        </div>
 
-<div  *ngIf="message"
-class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Success!</strong> Product added.
-    <button  (click)="removeMessage()"
-    type="button"  data-dismiss="alert" aria-label="Close">
-    </button>
-  </div>
-<form [formGroup]="addProduct" (ngSubmit)="addData()" class="rounded p-4 shadow">
-  <div class="form-group">
-    <label>Categorie</label>
-    <select class="form-control" formControlName="categorie">
-      <option value="">Select a category</option>
-      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
-  </div>
+        <small
+          class="text-danger"
+          *ngIf="
+            addProduct.controls['title'].invalid &&
+            (addProduct.controls['title'].dirty ||
+              addProduct.controls['title'].touched)
+          "
+        >
+          <div *ngIf="addProduct.controls['title'].errors?.['required']">
+            full title is required
+          </div>
+          <div *ngIf="addProduct.controls['title'].errors?.['minlength']">
+            full title length is not valid
+          </div>
+          <div *ngIf="addProduct.controls['title'].errors?.['pattern']">
+            first letter must be capitalized
+          </div>
+        </small>
 
+        <div class="form-group">
+          <label>Image</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter image"
+            formControlName="image"
+          />
+        </div>
 
-    <div class="form-group">
-        <label>Title</label>
-        <input type="text" class="form-control"   placeholder="Enter title" formControlName="title">
-      </div>
+        <small
+          class="text-danger"
+          *ngIf="
+            addProduct.controls['image'].invalid &&
+            (addProduct.controls['image'].dirty ||
+              addProduct.controls['image'].touched)
+          "
+        >
+          <div *ngIf="addProduct.controls['image'].errors?.['required']">
+            full image is required
+          </div>
+        </small>
 
-      <small class="text-danger" *ngIf="addProduct.controls['title'].invalid && (addProduct.controls['title'].dirty || addProduct.controls['title'].touched)">
-        <div *ngIf="addProduct.controls['title'].errors?.['required']"> full title is required</div>
-        <div *ngIf="addProduct.controls['title'].errors?.['minlength']"> full title length is not valid </div>
-        <div *ngIf="addProduct.controls['title'].errors?.['pattern']">first letter must be capitalized </div>
-      </small>
+        <div class="form-group">
+          <label>description</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter description"
+            formControlName="description"
+          />
+        </div>
 
-      <div class="form-group">
-        <label>Image</label>
-        <input type="text" class="form-control"   placeholder="Enter image" formControlName="image">
-      </div>
+        <small
+          class="text-danger"
+          *ngIf="
+            addProduct.controls['description'].invalid &&
+            (addProduct.controls['description'].dirty ||
+              addProduct.controls['description'].touched)
+          "
+        >
+          <div *ngIf="addProduct.controls['description'].errors?.['required']">
+            full description is required
+          </div>
+        </small>
 
-      <small class="text-danger" *ngIf="addProduct.controls['image'].invalid && (addProduct.controls['image'].dirty || addProduct.controls['image'].touched)">
-        <div *ngIf="addProduct.controls['image'].errors?.['required']"> full image is required</div>
-      </small>
+        <div class="form-group">
+          <label>price</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter price"
+            formControlName="price"
+          />
+        </div>
 
-      <div class="form-group">
-        <label>description</label>
-        <input type="text" class="form-control"   placeholder="Enter description" formControlName="description">
-      </div>
+        <small
+          class="text-danger"
+          *ngIf="
+            addProduct.controls['price'].invalid &&
+            (addProduct.controls['price'].dirty ||
+              addProduct.controls['price'].touched)
+          "
+        >
+          <div *ngIf="addProduct.controls['price'].errors?.['required']">
+            full price is required
+          </div>
+        </small>
 
-      <small class="text-danger" *ngIf="addProduct.controls['description'].invalid && (addProduct.controls['description'].dirty || addProduct.controls['description'].touched)">
-        <div *ngIf="addProduct.controls['description'].errors?.['required']"> full description is required</div>
-      </small>
-
-      <div class="form-group">
-        <label>price</label>
-        <input type="text" class="form-control"   placeholder="Enter price" formControlName="price">
-      </div>
-
-      <small class="text-danger" *ngIf="addProduct.controls['price'].invalid && (addProduct.controls['price'].dirty || addProduct.controls['price'].touched)">
-        <div *ngIf="addProduct.controls['price'].errors?.['required']"> full price is required</div>
-      </small>
-
-
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
-
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
 </div>
+
+<swal
+  #succesSwal
+  title="Success"
+  icon="success"
+  [text]="message"
+  [confirmButtonColor]="'lime'"
+  [confirmButtonText]="'OK'"
+>
+</swal>
+
+<swal
+  #failSwal
+  title="Failure !"
+  icon="error"
+  [text]="message"
+  [confirmButtonColor]="'red'"
+  [confirmButtonText]="'OK'"
+>
+</swal>

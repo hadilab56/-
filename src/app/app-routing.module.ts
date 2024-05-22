@@ -14,6 +14,7 @@ import { authGuard } from './auth.guard';
 import { userGuard } from './userguard.guard';
 import { OurUniversComponent } from './components/our-univers/our-univers.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'edit/:id', component: EditComponent, canActivate: [authGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'client', component: ClientComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'cart', component: CartComponent, canActivate: [userGuard] },
   { path: 'history', component: HistoryComponent, canActivate: [userGuard] },

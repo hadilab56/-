@@ -17,7 +17,8 @@ export class TabCartService {
 
   isInCart(product: Product): boolean {
     const currentCartItems = this.cartItemsSubject.value;
-    return currentCartItems.some(item => item.id === product.id);
+    return currentCartItems.some(item => item.id_p === product.id_p
+    );
 }
 
 removeFromCart(index: number) {

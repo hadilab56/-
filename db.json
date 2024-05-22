@@ -47,6 +47,38 @@
       "image": "https://staffdecor.fr/wp-content/uploads/2018/05/0760-1-75x495.jpg",
       "description": "Dimensions Pilastre cannelé Dimensions largeur 7 x Hauteur 250 x Epaisseur 1,5 cm",
       "price": "30"
+    },
+    {
+      "id": "5245",
+      "categorie": "Eclairage",
+      "title": "Applique Design",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/100-staffdecor-811x495.jpg",
+      "description": "L40 x P8 x H12 cm Applique rectangulaire sans kit Equipements compatibles : 50BC,50BF",
+      "price": "100"
+    },
+    {
+      "id": "6b81",
+      "categorie": "Eclairage",
+      "title": "Applique Baroque",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/16-staffdecor.jpg",
+      "description": "Dimensions L35 x P19 x H14 cm Applique sans kit Equipement possible : 52",
+      "price": "50"
+    },
+    {
+      "id": "c97e",
+      "categorie": "Eclairage",
+      "title": "Plafonnier suréquipé",
+      "image": "https://staffdecor.fr/wp-content/uploads/2018/05/PL621_ZOOM-768x543.jpg",
+      "description": "Plafonnier rond Ø 70 cm x 5.4 cm indirect B.Chaud spot BC Poids : 8.1 kg Entraxe de perçage : 35.3 x 35.3 cm > Spots LED 4 x 7W Blanc chaud : 3000°K Ruban LED blanc chaud : 3000°K Montage électrique prêt à raccorder sur du 230V. Livré avec une télécommande et variateur pour les spots uniquement. Livré avec un kit de fixation, un gabarit de perçage et 4 filins métalliques. Longueur de suspension : 50 cm maxi Perçages à réaliser avec un foret de Ø8 mm.",
+      "price": "140"
+    },
+    {
+      "id": "ad27",
+      "categorie": "Eclairage",
+      "title": "Profil à éclairage indirect Park Avenue",
+      "image": "https://staffdecor.fr/wp-content/uploads/2021/10/X.D150.jpg",
+      "description": "Dimensions Profil à éclairage indirect Park Avenue n°4 en carton de 2 profils (2,40 ml) Dimensions : 10X3.5 cm en longueur de 1.20 ml",
+      "price": "25"
     }
   ],
   "users": [
@@ -54,78 +86,55 @@
       "id": "1",
       "name": "admin",
       "email": "admin@gmail.com",
-      "adress": "isetRades",
+      "address": "isetRades",
       "phone": 58138146,
       "password": "adminpass",
       "role": "admin"
     },
     {
-      "id": "ba15",
-      "name": "hahaha",
-      "email": "haha@gmail.com",
-      "adress": "",
+      "id": "ee0b",
+      "name": "maryem",
+      "email": "mar@gmail.com",
+      "address": "manoubagf",
+      "phone": 51031416,
+      "password": "gvdf",
+      "role": "user"
+    },
+    {
+      "id": "3872",
+      "name": "ines",
+      "email": "ines@gmail.com",
+      "address": "rades",
       "phone": 12345678,
-      "password": "12345",
+      "password": "ines",
       "role": "user"
     }
   ],
   "carts": [
     {
-      "id": "cfd1",
+      "id": "b70a",
       "product": [
         {
-          "categorie": "Murs",
-          "title": "45234234",
-          "image": "43424",
-          "description": "4343",
-          "price": "1231",
-          "id": "7a61",
-          "quantity": 5
-        }
-      ],
-      "userEmail": "haha@gmail.com",
-      "date": "2024-05-15T00:11:41.541Z"
-    },
-    {
-      "id": "fbd9",
-      "product": [
-        {
-          "id": "aba2",
-          "categorie": "Plafond",
-          "title": "Angle pour moulure ",
-          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101D-336x495.jpg",
-          "description": "prix en ML ",
-          "price": "20",
+          "id_p": "5",
+          "title": "Doucine",
+          "description": "Dimensions Doucine de moulure avec coquille 1101F. 69 cm",
+          "price": "12",
+          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/DOUCINE-1101F-STAFFDECOR-1024x465.jpg",
+          "category": "Plafond",
           "quantity": 10
         },
         {
-          "categorie": "Plafond",
-          "title": "Moulure lisse ",
-          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101_-1108-800x545.jpg",
-          "description": "prix en ML :",
-          "price": "15",
-          "id": "4e99",
-          "quantity": 25
+          "id_p": "2",
+          "title": "Angle pour moulure ",
+          "description": "prix en ML ",
+          "price": "20",
+          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/1101D-336x495.jpg",
+          "category": "Plafond",
+          "quantity": 10
         }
       ],
-      "userEmail": "haha@gmail.com",
-      "date": "2024-05-15T08:37:38.716Z"
-    },
-    {
-      "id": "c579",
-      "product": [
-        {
-          "categorie": "Plafond",
-          "title": "Doucine",
-          "image": "https://staffdecor.fr/wp-content/uploads/2018/05/DOUCINE-1101F-STAFFDECOR-1024x465.jpg",
-          "description": "Dimensions Doucine de moulure avec coquille 1101F. 69 cm",
-          "price": "12",
-          "id": "f1ab",
-          "quantity": 111
-        }
-      ],
-      "userEmail": "haha@gmail.com",
-      "date": "2024-05-19T09:24:18.428Z"
+      "userEmail": "ines@gmail.com",
+      "date": "2024-05-22T10:21:25.304Z"
     }
   ]
 }

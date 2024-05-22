@@ -15,26 +15,39 @@
         <h5 class="card-title">Command {{ i + 1 }}</h5>
         <p>User Email: {{ cartItem.userEmail }}</p>
         <p>Date: {{ cartItem.date | date:'medium' }}</p>
+        <button (click)="deleteCommand(cartItem)" class="btn btn-sm btn-danger">Delete Command</button>
 
-        <table class="table">
+        <table class="table mt-2">
           <thead>
             <tr>
               <th>Product</th>
               <th>Price</th>
               <th>Quantity</th>
               <th>Total</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let product of cartItem.product">
               <td>{{ product.title }}</td>
-              <td class="price">{{ product.price }} DT</td>
-              <td>{{ product.quantity }}</td>
-              <td class="price">{{ calculateTotal(product) }} DT</td>
+              <td class="price">{{ product.price }}D</td>
+              <td>
+                <ng-container *ngIf="product.editing">
+                  <input type="number" [(ngModel)]="product.quantity" class="form-control" />
+                </ng-container>
+                <ng-container *ngIf="!product.editing">
+                  {{ product.quantity }}
+                </ng-container>
+              </td>
+              <td class="price">{{ calculateTotal(product) }}D</td>
+              <td>
+                <button *ngIf="!product.editing" (click)="editProduct(product)" class="btn btn-sm btn-primary">Edit</button>
+                <button *ngIf="product.editing" (click)="saveProduct(product)" class="btn btn-sm btn-success">Save</button>
+              </td>
             </tr>
             <tr>
               <th>Total Amount</th>
-              <td class="price">{{ calculateCartTotal(cartItem) }} DT</td>
+              <td class="price">{{ calculateCartTotal(cartItem) }}D</td>
             </tr>
           </tbody>
         </table>

@@ -1,36 +1,61 @@
 <app-admin-nav-bar></app-admin-nav-bar>
 
 <div class="container">
-    <h2>Products List</h2>
-    <table class="table table-striped table-container " >
-        <thead class="thead-dark">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Categorie</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Image</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of products">
-                <td class="ttdd">{{ product.id }}</td>
-                <td class="ttdd">{{ product.title }}</td>
-                <td class="ttdd">{{ product.categorie }}</td>
-                <td class="ttdd">{{ product.description }}</td>
-                <td class="ttdd">{{ product.price }}</td>
-                <td>
-                    <img src="{{ product.image }}" alt="Product Image" style="max-width: 100px; max-height: 100px;">
-                </td>
-                <td class="ttdd">
-                    <i class="fa fa-trash" (click)="deleteProduct(product.id)">  </i>
-            &nbsp;
-        <a routerLink="/edit/{{ product.id}}"><i class="fa fa-edit" ></i>
-        </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <h2>Products List</h2>
+  <table class="table table-striped table-container">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Categorie</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td class="ttdd">{{ product.id_p }}</td>
+        <td class="ttdd">{{ product.title }}</td>
+        <td class="ttdd">{{ product.category }}</td>
+        <td class="ttdd">{{ product.description }}</td>
+        <td class="ttdd">{{ product.price }}</td>
+        <td>
+          <img
+            src="{{ product.image }}"
+            alt="Product Image"
+            style="max-width: 100px; max-height: 100px"
+          />
+        </td>
+        <td class="ttdd">
+          <i class="fa fa-trash" (click)="deleteProduct(product.id_p)"> </i>
+          &nbsp;
+          <a routerLink="/edit/{{ product.id_p }}"
+            ><i class="fa fa-edit"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+<swal
+  #succesSwal
+  title="Success"
+  icon="success"
+  [text]="message"
+  [confirmButtonColor]="'lime'"
+  [confirmButtonText]="'OK'"
+>
+</swal>
+
+<swal
+  #failSwal
+  title="Failure !"
+  icon="error"
+  [text]="message"
+  [confirmButtonColor]="'red'"
+  [confirmButtonText]="'OK'"
+>
+</swal>

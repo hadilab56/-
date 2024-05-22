@@ -1,9 +1,11 @@
 export interface Product {
-    id?:number;
-    image?:string;
-    title?:string;
-    description?:string;
-    price?:number;
-    quantity?:number;
-    categorie?:string;
+  id_p?: number;
+  image?: string;
+  desc2?: String;
+  title?: string;
+  description?: string;
+  price?: number;
+  quantity?: number;
+  category?: string;
+  editing?: boolean; // Add this line
 }

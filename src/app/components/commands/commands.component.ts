@@ -10,11 +10,19 @@ import { CartService } from 'src/app/services/cart.service';
 export class CommandsComponent implements OnInit {
   cartHistory: Array<Cart> = [];
 
-  constructor(private cart: CartService) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cart.getCart().subscribe((res: any) => {
+    this.cartService.getCart().subscribe((res: any) => {
       this.cartHistory = res;
+      // Initialize the editing property for each product
+      this.cartHistory.forEach(cartItem => {
+        if (cartItem.product) {
+          cartItem.product.forEach(product => {
+            product.editing = false;
+          });
+        }
+      });
     });
   }
 
@@ -33,4 +41,25 @@ export class CommandsComponent implements OnInit {
   printCommands(): void {
     window.print();
   }
+
+  editProduct(product: any): void {
+    product.editing = true;
+  }
+
+  saveProduct(product: any): void {
+    product.editing = false;
+    // Save the updated quantity to the server or local state
+    // Example: this.cart.updateProduct(product).subscribe();
+  }
+  deleteCommand(cartItem: Cart): void {
+    const index = this.cartHistory.indexOf(cartItem);
+    if (cartItem.id !== undefined) {
+      this.cartService.deleteCart(cartItem.id).subscribe(() => {
+        // Handle successful deletion
+        this.cartHistory.splice(index, 1); // Remove the item from the cartHistory array
+      }, error => {
+        console.error('Error deleting cart item', error);
+      });
+    }
+}
 }

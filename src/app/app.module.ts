@@ -23,6 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OurUniversComponent } from './components/our-univers/our-univers.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ClientComponent } from './components/client/client.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,7 @@ import { ClientComponent } from './components/client/client.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    SweetAlert2Module.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],
